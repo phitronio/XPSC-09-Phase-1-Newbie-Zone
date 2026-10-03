@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int t,n,p[200001],f;
+int main(){
+	cin>>t;
+	for(int i=1;i<=2e5;i++){p[i]=i;
+		while(!(p[i]&1)) p[i]>>=1;
+	}
+	while(t--){
+		cin>>n,f=0;
+		for(int i=1,a;i<=n;i++)
+			cin>>a,f|=(p[a]!=p[i]);
+		if(f) cout<<"NO\n";
+		else cout<<"YES\n";
+	}
+	return 0;
+}

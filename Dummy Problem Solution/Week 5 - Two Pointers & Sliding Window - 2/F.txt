@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int t,n,a[320602],ans;
+int main(){
+	cin>>t;
+	while(t--){
+		cin>>n,ans=0;
+		for(int i=1;i<=n;i++)cin>>a[i];
+		for(int i=1;i<n;i++)if(!(((a[i]+a[i+1])^7)&&(a[i]-a[i+1])))ans++,i++;
+		cout<<ans<<"\n";
+	}return 0;
+}
